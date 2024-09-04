@@ -41,9 +41,5 @@
     }
 
 
-     //le decimos al oncreate para que la instancia no tenga un nombre
-     //agregamos una bandera para que se ejecute en pantalla completa, ocultanco la barra de estado
-     //llamar al APPCompatActivity al que heredamos
-    //le indicamos el valor de retorno de este metodo debe ser un recurso de diseño(un entero que referencie un diseño Xml
-    // es un metodo abstracto que las clases deben implemetar y devolver el ID con un retunr
+
 

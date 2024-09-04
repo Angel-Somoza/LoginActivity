@@ -1,6 +1,5 @@
 package com.example.loginactivity.Visual.Register
 
-import kotlin.coroutines.CoroutineContext
 
 interface Register_Contract {
     interface Register_View{
@@ -9,7 +8,7 @@ interface Register_Contract {
         fun Show_Progress()
         fun hideProgress()
         fun showError(errormsg:String)
-        fun showSuccessMessage(message: String) // Nuevo método
+        fun showSuccessMessage(message: String) //
 
     }
     interface Register_Presenter{

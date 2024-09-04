@@ -52,10 +52,6 @@ class Menu : AppCompatActivity() {
     }
 
     private fun logout() {
-        // Aquí deberías implementar la lógica de logout
-        // Por ejemplo, limpiar las preferencias compartidas, cerrar sesiones, etc.
-
-        // Luego, redirigir al usuario a la pantalla de login
         val intent = Intent(this, Login_Activity::class.java)
         startActivity(intent)
         finish()
