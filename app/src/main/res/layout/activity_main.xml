@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".Visual.Login.View.Login_Activity">
+
+
+    <ImageView
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="40sp"
+        android:src="@drawable/img"
+        />
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="LOGIN"
+    android:paddingStart="50dp"
+    android:textSize="45dp"
+    android:textColor="@color/azul"
+    android:textStyle="bold"/>
+
+
+    <TextView
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/Usuario"
+        android:textSize="18sp"
+        android:layout_gravity="center"
+        android:textStyle="bold"
+        />
+
+    <EditText
+        android:id="@+id/Et_usuario"
+        android:inputType="textPersonName"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/editext_forms"
+        android:hint="hola gente de color carton"
+        android:paddingStart="10dp"
+        android:paddingEnd="30dp"
+        tools:ignore="RtlSymmetry"
+        android:drawableStart="@drawable/user_icon"/>
+
+    <TextView
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/Password"
+        android:textSize="18sp"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:textStyle="bold"
+        />
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="300dp"
+        android:layout_height="58dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="5dp"
+        app:endIconMode="password_toggle"
+        app:endIconTint="@color/azul"
+        >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/Ed_Password"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/editext_forms"
+            android:inputType="textPassword"
+            android:paddingStart="10dp"
+            android:paddingEnd="30dp"
+            tools:ignore="RtlSymmetry"
+            android:hint="Contraseña"
+            android:drawableStart="@drawable/cerrar"
+
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/Tv_registrar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:hint="aun no tienes una cuenta?"
+        android:textColorHint="@color/azul"
+        android:textStyle="bold"
+
+        />
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/Btn_Ingresar"
+        style="@android:style/Widget.Button"
+        android:layout_width="300dp"
+        android:layout_height="48dp"
+        android:layout_gravity="center"
+        android:background="@drawable/button_back"
+        android:text="@string/ingresar"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_marginTop="10dp"/>
+
+        <ProgressBar
+            android:id="@+id/Pb_SighIn"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:visibility="gone"
+            />
+
+
+
+
+
+
+</LinearLayout>
