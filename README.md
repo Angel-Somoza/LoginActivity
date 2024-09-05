@@ -12,6 +12,7 @@ todod eso llevandolo a la base de datos antes mecionada, automaticamente validan
 Menu
 aca podemos observar una recyclerview, donde el usuario puede ver unas cardView con datos de donas, en el cual puede interactuar.
 
+Como ejecutarlo, es facil el codigo es 100% funcional, mientras tengas las dependecias que les dare funcionara, igualmente verificar si esta conectado el permiso a internet, cualquier informacion dirigirice con mi persona.
 
 ###Dependencias usadas en la app:
 
