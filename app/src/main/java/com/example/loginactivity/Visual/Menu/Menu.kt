@@ -33,7 +33,8 @@ class Menu : AppCompatActivity() {
       }
         val username = intent.getStringExtra("USERNAME")
         val tvTitle = findViewById<TextView>(R.id.tv_title)
-        tvTitle.text = "$username"
+        tvTitle.text = "Querido usuario bienvenido, $username"
+
     }
 
        override fun onCreateOptionsMenu(menu: Menu?): Boolean {
