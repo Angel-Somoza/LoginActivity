@@ -7,61 +7,66 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".Visual.Register.View.Register_Activity">
+
     <ImageView
         android:layout_width="250dp"
         android:layout_height="250dp"
         android:layout_gravity="center"
-        android:src="@drawable/img"
         android:layout_marginTop="20dp"
-        />
+        android:src="@drawable/img" />
 
-<TextView
-    android:id="@+id/Tv_SignUp_Title"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="SignUp"
-    android:textColor="@color/azul"
-    android:textSize="45dp"
-    android:layout_marginTop="20dp"
-    android:paddingStart="50dp"
-    android:textStyle="bold"
-    />
+    <TextView
+        android:id="@+id/Tv_SignUp_Title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:paddingStart="50dp"
+        android:text="SignUp"
+        android:textColor="@color/azul"
+        android:textSize="45dp"
+        android:textStyle="bold" />
+
     <TextView
         android:layout_width="300dp"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:hint="@string/Usuario"
         android:textSize="18sp"
-        android:layout_gravity="center"
-        android:textStyle="bold"
-        />
+        android:textStyle="bold" />
 
-    <EditText
-        android:id="@+id/Et_usuario_SignUp"
-        android:inputType="textPersonName"
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="300dp"
-        android:layout_height="50dp"
-        android:background="@drawable/editext_forms"
+        android:layout_height="58dp"
         android:layout_gravity="center"
         android:layout_marginTop="5dp"
-        android:paddingStart="10dp"
-        android:paddingEnd="30dp"
-        android:text="@string/Usuario"
-        tools:ignore="RtlSymmetry"
-        android:drawableStart="@drawable/user_icon"
-        android:textColor="@color/azuloscuro"
-        />
+        app:endIconTint="@color/azul">
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/Et_usuario_SignUp"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/editext_forms"
+            android:drawableStart="@drawable/user_icon"
+            android:inputType="textPersonName"
+            android:paddingStart="10dp"
+            android:paddingEnd="30dp"
+            android:hint="@string/Usuario"
+            android:textColor="@color/azuloscuro"
+            tools:ignore="RtlSymmetry" />
+
+    </com.google.android.material.textfield.TextInputLayout>
 
 
     <TextView
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:hint="@string/Password"
-        android:textSize="18sp"
         android:layout_gravity="center"
         android:layout_marginTop="5dp"
-        android:textStyle="bold"
-        />
-
+        android:hint="@string/Password"
+        android:textSize="18sp"
+        android:textStyle="bold" />
 
 
     <com.google.android.material.textfield.TextInputLayout
@@ -70,21 +75,19 @@
         android:layout_gravity="center"
         android:layout_marginTop="5dp"
         app:endIconMode="password_toggle"
-        app:endIconTint="@color/azul"
-       >
+        app:endIconTint="@color/azul">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/Et_Pw1_SignUp"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@drawable/editext_forms"
+            android:drawableStart="@drawable/cerrar"
+            android:hint="Contraseña"
             android:inputType="textPassword"
             android:paddingStart="10dp"
             android:paddingEnd="30dp"
             tools:ignore="RtlSymmetry"
-            android:hint="Contraseña"
-            android:drawableStart="@drawable/cerrar"
-
             />
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -92,12 +95,11 @@
     <TextView
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:hint="@string/confirm_password"
-        android:textSize="18sp"
         android:layout_gravity="center"
         android:layout_marginTop="10dp"
-        android:textStyle="bold"
-        />
+        android:hint="@string/confirm_password"
+        android:textSize="18sp"
+        android:textStyle="bold" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="300dp"
@@ -110,17 +112,18 @@
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/Et_Pw2_SignUp"
+            textcolor="@color/azul"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:background="@drawable/editext_forms"
+            android:drawableStart="@drawable/cerrar"
             android:inputType="textPassword"
             android:paddingStart="10dp"
             android:paddingEnd="30dp"
-            tools:ignore="RtlSymmetry"
-            android:drawableStart="@drawable/cerrar"
-            textcolor="@color/azul"/>
+            tools:ignore="RtlSymmetry" />
 
     </com.google.android.material.textfield.TextInputLayout>
+
     <FrameLayout
         android:layout_width="300dp"
         android:layout_height="50dp"
@@ -129,21 +132,20 @@
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/Btn_SignUp"
+            style="@android:style/Widget.Button"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            style="@android:style/Widget.Button"
-            android:text="SIGNUP"
-            android:textSize="18sp"
             android:background="@drawable/button_back"
+            android:text="SIGNUP"
             android:textColor="@color/white"
-            android:textStyle="bold"
-            />
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
         <ProgressBar
             android:id="@+id/Pb_SignUp"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_gravity="center"
-            android:visibility="gone"/>
+            android:visibility="gone" />
     </FrameLayout>
 </LinearLayout>
