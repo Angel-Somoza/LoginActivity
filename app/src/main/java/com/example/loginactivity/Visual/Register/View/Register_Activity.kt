@@ -4,7 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import com.example.loginactivity.Base.Base_Activity
-import com.example.loginactivity.Data.LocalData.DB_Helper
+import com.example.loginactivity.Data.LocalData.DataBase
 import com.example.loginactivity.Logic.Interactor.Register_Interactor.Register_Interactor_Impl
 import com.example.loginactivity.R
 import com.example.loginactivity.Visual.Register.Presenter.Register_Presenter
@@ -16,16 +16,16 @@ class Register_Activity : Base_Activity(),Register_Contract.Register_View {
 
     private lateinit var presenter: Register_Presenter
 
-    private lateinit var db: DB_Helper
+    private lateinit var db: DataBase
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        presenter = Register_Presenter(Register_Interactor_Impl(DB_Helper(this)))
+//        presenter = Register_Presenter(Register_Interactor_Impl(DataBase(this)))
         presenter.attach_View(this)
 
         binding = ActivityRegisterBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        db = DB_Helper(this)
+//        db = DataBase(this)
 
         binding.BtnSignUp.setOnClickListener {
               signUp()

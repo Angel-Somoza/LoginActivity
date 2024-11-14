@@ -5,7 +5,7 @@
     import android.os.Bundle
     import android.view.View
     import com.example.loginactivity.Base.Base_Activity
-    import com.example.loginactivity.Data.LocalData.DB_Helper
+    import com.example.loginactivity.Data.LocalData.DataBase
     import com.example.loginactivity.Logic.Interactor.Login_Interactor.Login_Interactor_Impl
 
     import com.example.loginactivity.R
@@ -20,16 +20,16 @@
         lateinit var  presenter: Login_Presenter
 
         private lateinit var binding: ActivityMainBinding
-        private lateinit var dbh: DB_Helper
+        private lateinit var dbh: DataBase
         override fun onCreate(savedInstanceState: Bundle?) {
             super.onCreate(savedInstanceState)
-            presenter = Login_Presenter(Login_Interactor_Impl(DB_Helper(this)))
+//            presenter = Login_Presenter(Login_Interactor_Impl(DataBase(this)))
 
             presenter.attachView(this)
 
             binding = ActivityMainBinding.inflate(layoutInflater)
             setContentView(binding.root)
-            dbh = DB_Helper(this)
+//            dbh = DataBase(this)
 
             binding.TvRegistrar.paintFlags = binding.TvRegistrar.paintFlags or Paint.UNDERLINE_TEXT_FLAG//subrayado de el view registrar.
             binding.TvRegistrar.setOnClickListener()

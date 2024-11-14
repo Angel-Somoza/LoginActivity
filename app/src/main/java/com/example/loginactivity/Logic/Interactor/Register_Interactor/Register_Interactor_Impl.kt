@@ -1,18 +1,18 @@
 package com.example.loginactivity.Logic.Interactor.Register_Interactor
 
-import com.example.loginactivity.Data.LocalData.DB_Helper
+import com.example.loginactivity.Data.LocalData.DataBase
 
 
-class Register_Interactor_Impl(private val dbHelper: DB_Helper) :Register_Interactor {
+class Register_Interactor_Impl(private val dbHelper: DataBase) :Register_Interactor {
     override fun SignUp(
         username: String,password: String, callback: Register_Interactor.RegisterCallback) {
-        if (dbHelper.insertdata(username,password)){
+//        if (dbHelper.insertdata(username,password)){
             callback.onRegisterSuccess()
         }
-        else {
-            callback.onRegisterFailure("Error, nombre de usuario ya en uso")
-        }
-    }
+//        else {
+//            callback.onRegisterFailure("Error, nombre de usuario ya en uso")
+//        }
+//    }
 
 
 }

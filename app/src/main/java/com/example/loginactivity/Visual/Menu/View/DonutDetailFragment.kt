@@ -6,7 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import com.example.loginactivity.Data.Api.Json.Donut
+import com.example.loginactivity.Data.Api.Models.Donut
 import com.example.loginactivity.R
 
 class DonutDetailFragment : Fragment() {

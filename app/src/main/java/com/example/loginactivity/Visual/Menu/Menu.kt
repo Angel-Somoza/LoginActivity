@@ -5,12 +5,9 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.TextView
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
-import com.example.loginactivity.Data.Api.Json.Donut
+import com.example.loginactivity.Data.Api.Models.Donut
 import com.example.loginactivity.R
 import com.example.loginactivity.Visual.Login.View.Login_Activity
 import com.example.loginactivity.Visual.Menu.View.DonutDetailFragment

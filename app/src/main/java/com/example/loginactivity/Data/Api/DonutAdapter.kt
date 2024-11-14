@@ -4,7 +4,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.loginactivity.Data.Api.Json.Donut
+import com.example.loginactivity.Data.Api.Models.Donut
 import com.example.loginactivity.R
 
 

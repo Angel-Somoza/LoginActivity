@@ -81,6 +81,12 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.6.1")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.6.1")
     implementation ("com.github.thejuki:k-form-master:8.3.0")
+    //ROOM
+    implementation ("androidx.room:room-runtime:2.5.2")
+    implementation ("androidx.room:room-ktx:2.5.2")
+
+
+
 
 }
 kapt {
