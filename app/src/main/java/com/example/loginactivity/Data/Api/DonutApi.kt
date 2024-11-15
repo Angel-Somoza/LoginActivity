@@ -1,6 +1,6 @@
 package com.example.loginactivity.Data.Api
 
-import com.example.loginactivity.Data.Api.Models.Donut
+import com.example.loginactivity.Data.Models.Donut
 import retrofit2.http.GET
 
 interface DonutApi {

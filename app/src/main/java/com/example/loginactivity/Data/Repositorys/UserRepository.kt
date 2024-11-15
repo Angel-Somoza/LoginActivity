@@ -1,6 +1,6 @@
 package com.example.loginactivity.Data.Repositorys
 
-import com.example.loginactivity.Data.Api.Models.User
+import com.example.loginactivity.Data.Models.User
 import com.example.loginactivity.Data.Room.Userdao
 import javax.inject.Inject
 

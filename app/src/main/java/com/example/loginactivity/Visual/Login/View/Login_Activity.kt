@@ -28,8 +28,8 @@ class Login_Activity : Base_Activity() {
         }
         binding.BtnIngresar.setOnClickListener() {
             viewModel.Login(
-                binding.EtUsuario.text.toString(),
-                binding.EdPassword.text.toString()
+                binding.EtUsuario.text.toString().trim(),
+                binding.EdPassword.text.toString().trim()
             )
         }
 

@@ -1,4 +1,4 @@
-package com.example.loginactivity.Data.Api.Models
+package com.example.loginactivity.Data.Models
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity

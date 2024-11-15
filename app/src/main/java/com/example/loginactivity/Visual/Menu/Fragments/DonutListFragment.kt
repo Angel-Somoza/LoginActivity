@@ -1,4 +1,4 @@
-package com.example.loginactivity.Visual.Menu.View
+package com.example.loginactivity.Visual.Menu.Fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

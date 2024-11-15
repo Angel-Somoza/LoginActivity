@@ -7,11 +7,11 @@ import android.view.MenuItem
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
-import com.example.loginactivity.Data.Api.Models.Donut
+import com.example.loginactivity.Data.Models.Donut
 import com.example.loginactivity.R
 import com.example.loginactivity.Visual.Login.View.Login_Activity
-import com.example.loginactivity.Visual.Menu.View.DonutDetailFragment
-import com.example.loginactivity.Visual.Menu.View.DonutListFragment
+import com.example.loginactivity.Visual.Menu.Fragments.DonutDetailFragment
+import com.example.loginactivity.Visual.Menu.Fragments.DonutListFragment
 
 class Menu : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
