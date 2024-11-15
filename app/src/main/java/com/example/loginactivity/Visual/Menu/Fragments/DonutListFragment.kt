@@ -7,10 +7,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.loginactivity.Data.Api.DonutAdapter
 import com.example.loginactivity.Data.Api.DonutApi
+import com.example.loginactivity.Data.Models.Donut
 import com.example.loginactivity.R
 import com.example.loginactivity.Visual.Menu.Menu
 import com.example.loginactivity.databinding.FragmentDonutListBinding
@@ -34,16 +36,18 @@ class DonutListFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        setupRecyclerView()
-        setupObservers()
-
         viewModel.fetchDonuts()
+        setupRecyclerView()
+       setupObservers()
+
     }
 
     private fun setupRecyclerView() {
-        adapter = DonutAdapter { selectedDonut ->
-            (activity as? Menu)?.showDonutDetail(selectedDonut)
+        adapter = DonutAdapter { donut ->
+            view?.visibility = View.GONE
+            val action = DonutListFragmentDirections.actionDonutListFragmentToDonutDetailFragment(donut)
+            findNavController().navigate(action)
+
         }
         binding.recyclerView.apply {
             layoutManager = LinearLayoutManager(context)
@@ -53,7 +57,7 @@ class DonutListFragment : Fragment() {
 
     private fun setupObservers() {
         viewModel.donuts.observe(viewLifecycleOwner) { donuts ->
-            adapter.updateDonuts(donuts)
+           adapter.updateDonuts(donuts)
         }
     }
 
@@ -61,4 +65,9 @@ class DonutListFragment : Fragment() {
         super.onDestroyView()
         _binding = null
     }
+//    private fun onDonutClick() {
+//        val action = DonutListFragmentDirections.actionDonutListFragmentToDonutDetailFragment()
+//        findNavController().navigate(action)
+//
+//    }
 }

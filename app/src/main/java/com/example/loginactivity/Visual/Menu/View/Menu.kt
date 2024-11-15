@@ -58,11 +58,11 @@ class Menu : AppCompatActivity() {
     }
 
 
-    fun showDonutDetail(donut: Donut) {
-        val detailFragment = DonutDetailFragment.newInstance(donut)
-        supportFragmentManager.beginTransaction()
-            .replace(R.id.fragmentContainer, detailFragment)
-            .addToBackStack(null)
-            .commit()
-    }
+//    fun showDonutDetail(donut: Donut) {
+//        val detailFragment = DonutDetailFragment.newInstance(donut)
+//        supportFragmentManager.beginTransaction()
+//            .replace(R.id.fragmentContainer, detailFragment)
+//            .addToBackStack(null)
+//            .commit()
+//    }
 }

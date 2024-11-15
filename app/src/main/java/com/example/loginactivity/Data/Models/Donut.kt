@@ -1,14 +1,16 @@
 package com.example.loginactivity.Data.Models
 
 import android.os.Parcelable
+import com.google.gson.annotations.SerializedName
 import kotlinx.parcelize.Parcelize
+import java.io.Serializable
 
 @Parcelize
 data class Donut(
-    val id: String,
-    val type: String,
-    val name: String,
-    val ppu: Double,
-    val batters: Batters,
-    val topping: List<Topping>
+    @SerializedName("id")  val id: String,
+    @SerializedName("type") val type: String,
+    @SerializedName("name")   val name: String,
+    @SerializedName("ppu") val ppu: Double,
+    @SerializedName("batters")  val batters: Batters,
+    @SerializedName("topping")  val topping: List<Topping>
 ): Parcelable
