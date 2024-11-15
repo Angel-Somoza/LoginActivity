@@ -12,7 +12,9 @@ import com.example.loginactivity.R
 import com.example.loginactivity.Visual.Login.View.Login_Activity
 import com.example.loginactivity.Visual.Menu.Fragments.DonutDetailFragment
 import com.example.loginactivity.Visual.Menu.Fragments.DonutListFragment
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class Menu : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

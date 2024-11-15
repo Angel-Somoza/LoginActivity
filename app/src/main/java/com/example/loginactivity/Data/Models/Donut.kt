@@ -1,5 +1,9 @@
 package com.example.loginactivity.Data.Models
 
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
+
+@Parcelize
 data class Donut(
     val id: String,
     val type: String,
@@ -7,4 +11,4 @@ data class Donut(
     val ppu: Double,
     val batters: Batters,
     val topping: List<Topping>
-)
+): Parcelable

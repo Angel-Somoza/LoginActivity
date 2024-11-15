@@ -1,12 +1,18 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
+    
+    id("kotlin-parcelize")
+
     //dagger hilt
     id("com.google.dagger.hilt.android")
     //kapt
     kotlin("kapt")
     //navigation component
     id("androidx.navigation.safeargs.kotlin") // Navigation Component SafeArgs
+
+
+
 
 }
 

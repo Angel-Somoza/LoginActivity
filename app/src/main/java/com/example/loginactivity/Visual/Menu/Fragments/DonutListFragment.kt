@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -12,42 +13,52 @@ import com.example.loginactivity.Data.Api.DonutAdapter
 import com.example.loginactivity.Data.Api.DonutApi
 import com.example.loginactivity.R
 import com.example.loginactivity.Visual.Menu.Menu
+import com.example.loginactivity.databinding.FragmentDonutListBinding
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
+@AndroidEntryPoint
 class DonutListFragment : Fragment() {
-    private lateinit var recyclerView: RecyclerView
+    private var _binding: FragmentDonutListBinding? = null
+    private val binding get() = _binding!!
+
+    private val viewModel: DonutListFragmentViewModel by viewModels()
     private lateinit var adapter: DonutAdapter
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        return inflater.inflate(R.layout.fragment_donut_list, container, false)
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
+        _binding = FragmentDonutListBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        recyclerView = view.findViewById(R.id.recyclerView)
-        recyclerView.layoutManager = LinearLayoutManager(context)
+        setupRecyclerView()
+        setupObservers()
 
-        val retrofit = Retrofit.Builder()
-            .baseUrl("https://private-d24209-ocisneros.apiary-mock.com/")
-            .addConverterFactory(GsonConverterFactory.create())
-            .build()
+        viewModel.fetchDonuts()
+    }
 
-        val api = retrofit.create(DonutApi::class.java)
-
-        viewLifecycleOwner.lifecycleScope.launch {
-            try {
-                val donuts = api.getDonuts()
-                adapter = DonutAdapter(donuts) { selectedDonut ->
-                    (activity as? Menu)?.showDonutDetail(selectedDonut)
-                }
-                recyclerView.adapter = adapter
-            } catch (e: Exception) {
-                // Manejo de errores
-                e.printStackTrace()
-            }
+    private fun setupRecyclerView() {
+        adapter = DonutAdapter { selectedDonut ->
+            (activity as? Menu)?.showDonutDetail(selectedDonut)
         }
+        binding.recyclerView.apply {
+            layoutManager = LinearLayoutManager(context)
+            adapter = this@DonutListFragment.adapter
+        }
+    }
+
+    private fun setupObservers() {
+        viewModel.donuts.observe(viewLifecycleOwner) { donuts ->
+            adapter.updateDonuts(donuts)
+        }
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 }
