@@ -1,6 +1,6 @@
 package com.example.loginactivity.Logic.Interactor.Register_Interactor
 
-import com.example.loginactivity.Data.LocalData.DataBase
+import com.example.loginactivity.Data.Room.DataBase
 
 
 class Register_Interactor_Impl(private val dbHelper: DataBase) :Register_Interactor {

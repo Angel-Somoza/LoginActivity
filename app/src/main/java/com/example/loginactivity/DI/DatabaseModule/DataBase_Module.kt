@@ -2,8 +2,9 @@ package com.example.loginactivity.DI.DatabaseModule
 
 import android.content.Context
 import androidx.room.Room
-import com.example.loginactivity.Data.LocalData.DataBase
-import com.example.loginactivity.Data.LocalData.Userdao
+import com.example.loginactivity.Data.Room.DataBase
+import com.example.loginactivity.Data.Room.Userdao
+
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

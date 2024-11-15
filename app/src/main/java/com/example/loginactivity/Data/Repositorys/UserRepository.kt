@@ -1,8 +1,9 @@
 package com.example.loginactivity.Data.Repositorys
 
 import com.example.loginactivity.Data.Api.Models.User
-import com.example.loginactivity.Data.LocalData.Userdao
+import com.example.loginactivity.Data.Room.Userdao
 import javax.inject.Inject
+
 
 class UserRepository @Inject constructor(private val userdao: Userdao) {
     suspend fun InsertUser(username: String, password: String): Boolean {

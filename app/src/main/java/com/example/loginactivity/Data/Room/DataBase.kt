@@ -1,4 +1,4 @@
-package com.example.loginactivity.Data.LocalData
+package com.example.loginactivity.Data.Room
 
 import androidx.room.Dao
 import androidx.room.Database
